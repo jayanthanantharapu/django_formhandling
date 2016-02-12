@@ -1,0 +1,17 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+from handle.models import usr
+from handle.forms import UserForm
+
+# Create your views here.
+def formhandle(request):
+	context = RequestContext(request)
+	if request.method == "POST":
+	    users_fo = UserForm(data = request.POST)
+	    if users.is_valid():
+		users = users_fo.save()
+	    else:
+		print users_fo
+	else:
+	    users_fo = UserForm()
+    return render_to_response('handle/forms.html', {},context)

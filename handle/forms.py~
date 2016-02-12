@@ -1,0 +1,6 @@
+from django import forms
+from handle.models import usr
+
+# Create your forms here.
+class UserForm(forms.ModelForm):
+
